@@ -17,18 +17,19 @@ The Maker-ESP32 is a high-performance controller developed by NULLLAB, based on 
 
 ## Technical Specifications
 
-| Feature       | Details                                                          |
-| ------------- | ---------------------------------------------------------------- |
-| Core Module   | ESP32-WROOM-32E (Integrated 2.4 GHz Wi-Fi & Dual-mode Bluetooth) |
-| Memory        | 448KB ROM, 520KB SRAM, 4MB Flash                                 |
-| Input Voltage | DC 6V – 16V (Standard 5.5-2.1mm DC Jack)                         |
-| Motor Driver  | Toshiba Professional Driver Chip                                 |
-| Max Current   | Up to 3.5A (Single Motor)                                        |
-| Dimensions    | 80mm × 57mm (PCB Thickness: 1.6mm)                               |
-| Weight        | 35g (Net)                                                        |
-| Mounting      | M4 Holes, LEGO Compatible                                        |
-| Motor Pin     | M1(27, 13) M2(4, 2) M3(17, 12) M4(14, 15)                        |
-| Servo Pin     | 25, 26, 32, 33                                                   |
+| Feature           | Details                                                      |
+| ----------------- | ------------------------------------------------------------ |
+| Core Module       | ESP32-WROOM-32E (Integrated 2.4 GHz Wi-Fi & Dual-mode Bluetooth) |
+| Memory            | 448KB ROM, 520KB SRAM, 4MB Flash                             |
+| Input Voltage     | DC 6V – 16V (Standard 5.5-2.1mm DC Jack)                     |
+| Motor Driver      | Toshiba Professional Driver Chip                             |
+| Max Current       | Up to 3.5A (Single Motor)                                    |
+| Dimensions        | 80mm × 57mm (PCB Thickness: 1.6mm)                           |
+| Weight            | 35g (Net)                                                    |
+| Mounting          | M4 Holes, LEGO Compatible                                    |
+| Motor Pin         | M1(27, 13) M2(4, 2) M3(17, 12) M4(14, 15)                    |
+| Servo Pin         | 25, 26, 32, 33                                               |
+| Stepper Motor Pin | Stepper Motor1(27, 13, 2, 4) Stepper Motor2(17, 12, 14, 15)  |
 
 ## Hardware Interface Map
 
@@ -40,14 +41,15 @@ The Maker-ESP32 is a high-performance controller developed by NULLLAB, based on 
 
 The board is rich with specialized ports to minimize messy wiring.
 
-Notes:  
-
-    Motor and IO Switch:  When the switch is toggled to the "IO" side, the corresponding pins (17, 12, 14, 15) function as general-purpose input/output ports; when the switch is set to the "Motor" side (M3A/M3B/M4A/M4B), these pins switch to motor drive functionality.
+**Notes:**   Motor and IO Switch:  When the switch is toggled to the "IO" side, the corresponding pins (17, 12, 14, 15) function as general-purpose input/output ports; when the switch is set to the "Motor" side (M3A/M3B/M4A/M4B), these pins switch to motor drive functionality.
 
 ### Motor Control
 
 - 4 x DC Motor Ports (PH2.0 Interface).
+
 - 2 x Stepper Motor Ports.
+
+  **Notes:**  stepper1 shares the same IO pins with M1 and M2, and stepper2 shares pins with M3 and M4, so they cannot be used simultaneously. When using the motors, ensure the DC jack is powered externally (6-16V) and, if using the M3/M4 motors, set the toggle switch to the motor side.
 
 ### Actuators & Display
 
@@ -98,4 +100,15 @@ Maker-ESP32 is cross-platform compatible, making it suitable for both beginners 
 
 - Arduino IDE: Use the ESP32 board manager to upload C++ code.
 - MicroPython/Python: Ideal for rapid prototyping and AI-based logic.
-- Graphical Programming: Compatible with Mixly and other block-based environments for education.
+
+## **Reference Links**
+
+[ESP-IDF Programming Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/index.html)
+
+[ESP-IDF Extension for VSCode - - — ESP-IDF Extension for VSCode latest documentation](https://docs.espressif.com/projects/vscode-esp-idf-extension/en/latest/index.html)
+
+[MicroPython language and implementation — MicroPython latest documentation](https://docs.micropython.org/en/latest/reference/index.html)
+
+[micropython/ports/esp32/README.md at master · micropython/micropython](https://github.com/micropython/micropython/blob/master/ports/esp32/README.md)
+
+[Welcome to ESP32 Arduino Core’s documentation - - — Arduino ESP32 latest documentation](https://docs.espressif.com/projects/arduino-esp32/en/latest/index.html)
