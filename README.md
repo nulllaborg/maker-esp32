@@ -2,7 +2,7 @@
 
 ## Product Image
 
-![Maker-ESP32](picture/maker-esp32.jpg)
+![Maker-ESP32](./picture/maker-esp32.jpg)
 
 ## Introduction
 
