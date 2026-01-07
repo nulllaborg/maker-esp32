@@ -43,6 +43,10 @@ The board is rich with specialized ports to minimize messy wiring.
 
 **Notes:**   Motor and IO Switch:  When the switch is toggled to the "IO" side, the corresponding pins (17, 12, 14, 15) function as general-purpose input/output ports; when the switch is set to the "Motor" side (M3A/M3B/M4A/M4B), these pins switch to motor drive functionality.
 
+## Driver Installation
+
+[CH341SER.ZIP - Nanjing Qinheng Microelectronics Co., Ltd.](https://www.wch-ic.com/downloads/CH341SER_ZIP.html)
+
 ### Motor Control
 
 - 4 x DC Motor Ports (PH2.0 Interface).
